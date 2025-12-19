@@ -4,8 +4,8 @@ const milkTeaVariants = [
     { id: 3, name: 'Matcha Milk Tea', price: 55.00, description: 'Premium Japanese matcha whisked with milk for an earthy, smooth flavor.', image: 'images/matcha.jpg', category: 'specialty', featured: true },
     { id: 4, name: 'Thai Milk Tea', price: 65.00, description: 'Bold and aromatic Thai tea with condensed milk, served over ice.', image: 'images/thai.jpg', category: 'classic', featured: true },
     { id: 5, name: 'Brown Sugar Milk Tea', price: 45.00, description: 'Caramelized brown sugar with fresh milk and tiger-striped boba pearls.', image: 'images/brownsugar.jpg', category: 'specialty', featured: true },
-        { id: 6, name: 'Wintermelon Milk Tea', price: 50.00, description: 'Refreshing wintermelon syrup with smooth milk tea and tapioca.', image: 'images/wintermelon.jpg', category: 'classic', featured: true },
-        { id: 7, name: 'Okinawa Milk Tea', price: 51.00, description: 'Rich roasted brown sugar from Okinawa with premium milk tea base.', image: 'images/okinawa.jpg', category: 'specialty', featured: false },
+    { id: 6, name: 'Wintermelon Milk Tea', price: 50.00, description: 'Refreshing wintermelon syrup with smooth milk tea and tapioca.', image: 'images/wintermelon.jpg', category: 'classic', featured: true },
+    { id: 7, name: 'Okinawa Milk Tea', price: 51.00, description: 'Rich roasted brown sugar from Okinawa with premium milk tea base.', image: 'images/okinawa.jpg', category: 'specialty', featured: false },
     { id: 8, name: 'Honeydew Milk Tea', price: 59.00, description: 'Sweet honeydew melon blended with creamy milk tea.', image: 'images/honeydew.jpg', category: 'fruit', featured: false },
     { id: 9, name: 'Strawberry Milk Tea', price: 64.00, description: 'Fresh strawberry puree swirled with creamy milk tea.', image: 'images/strawberry.jpg', category: 'fruit', featured: false },
     { id: 10, name: 'Mango Milk Tea', price: 45.00, description: 'Tropical mango blended with smooth milk tea for a refreshing treat.', image: 'images/mango.jpg', category: 'fruit', featured: false },
@@ -23,9 +23,9 @@ let autoSlideInterval;
 function initCarousel() {
     const carousel = document.getElementById('carousel');
     const dotsContainer = document.getElementById('dots');
-    
+
     const featuredItems = milkTeaVariants.filter(item => item.featured);
-    
+
     featuredItems.forEach((item, index) => {
         const slide = document.createElement('div');
         slide.className = 'carousel-item';
@@ -56,7 +56,7 @@ function initCarousel() {
 function updateCarousel() {
     const carousel = document.getElementById('carousel');
     carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
-    
+
     const dots = document.querySelectorAll('.dot');
     dots.forEach((dot, index) => {
         dot.classList.toggle('active', index === currentSlide);
@@ -93,7 +93,7 @@ function resetAutoSlide() {
 function initMenu() {
     const menuGrid = document.getElementById('menuGrid');
     menuGrid.innerHTML = '';
-    
+
     milkTeaVariants.forEach(item => {
         const menuItem = document.createElement('div');
         menuItem.className = `menu-item ${item.category}`;
@@ -119,9 +119,9 @@ function initMenu() {
 function filterMenu(category, btn) {
     const menuItems = document.querySelectorAll('.menu-item');
     const filterBtns = document.querySelectorAll('.filter-btn');
-    
+
     filterBtns.forEach(b => b.classList.remove('active'));
-    
+
     if (btn) {
         btn.classList.add('active');
     } else {
@@ -131,7 +131,7 @@ function filterMenu(category, btn) {
             }
         });
     }
-    
+
     menuItems.forEach(item => {
         if (category === 'all' || item.classList.contains(category)) {
             item.style.display = 'block';
@@ -145,18 +145,18 @@ function filterMenu(category, btn) {
 function showPage(pageName) {
     const pages = document.querySelectorAll('.page');
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     pages.forEach(page => {
         page.classList.remove('active');
     });
-    
+
     navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.dataset.page === pageName) {
             link.classList.add('active');
         }
     });
-    
+
     document.getElementById(pageName).classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -164,13 +164,13 @@ function showPage(pageName) {
 function addToCart(itemId) {
     const item = milkTeaVariants.find(i => i.id === itemId);
     const existingItem = cart.find(i => i.id === itemId);
-    
+
     if (existingItem) {
         existingItem.quantity += 1;
     } else {
         cart.push({ ...item, quantity: 1 });
     }
-    
+
     updateCart();
     showNotification(`${item.name} added to cart!`);
 }
@@ -248,11 +248,11 @@ function showNotification(message) {
     notification.className = 'notification';
     notification.textContent = message;
     document.body.appendChild(notification);
-    
+
     setTimeout(() => {
         notification.classList.add('show');
     }, 10);
-    
+
     setTimeout(() => {
         notification.classList.remove('show');
         setTimeout(() => {
@@ -266,7 +266,7 @@ function checkout() {
         showNotification('Your cart is empty!');
         return;
     }
-    
+
     const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     showNotification(`Order placed! Total: ₱${total.toFixed(2)}`);
     cart = [];
@@ -274,7 +274,7 @@ function checkout() {
     toggleCart();
 }
 
-window.onclick = function(event) {
+window.onclick = function (event) {
     const mobileNav = document.getElementById('mobileNav');
     if (!event.target.closest('.mobile-menu-btn') && !event.target.closest('.mobile-nav')) {
         mobileNav.classList.remove('active');

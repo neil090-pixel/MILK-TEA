@@ -30,7 +30,10 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: 'Playfair Display', Georgia, serif;
     font-weight: 600;
     line-height: 1.3;
@@ -179,8 +182,15 @@ nav {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .section-header {
@@ -551,7 +561,7 @@ nav {
     letter-spacing: 2px;
 }
 
-.testimonial-card > p {
+.testimonial-card>p {
     color: var(--text-dark);
     font-size: 1rem;
     line-height: 1.7;
@@ -602,7 +612,7 @@ nav {
 
 .about-story {
     background: var(--white);
-    padding: 2.5rem;    
+    padding: 2.5rem;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
 }
@@ -835,7 +845,7 @@ nav {
     margin-bottom: 0.5rem;
 }
 
-.social-section > p {
+.social-section>p {
     color: var(--text-light);
     margin-bottom: 1.5rem;
 }
@@ -1027,8 +1037,13 @@ nav {
 }
 
 @keyframes slideIn {
-    from { transform: translateX(100%); }
-    to { transform: translateX(0); }
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
 }
 
 .cart-header {
@@ -1287,42 +1302,42 @@ nav {
     .nav-links {
         display: none;
     }
-    
+
     .mobile-menu-btn {
         display: flex;
     }
-    
+
     .hero h1 {
         font-size: 2.5rem;
     }
-    
+
     .hero-stats {
         flex-direction: column;
         gap: 1.5rem;
     }
-    
+
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    
+
     .carousel-btn {
         width: 40px;
         height: 40px;
     }
-    
+
     .carousel-btn.prev {
         left: 0.5rem;
     }
-    
+
     .carousel-btn.next {
         right: 0.5rem;
     }
-    
+
     .section-header h2 {
         font-size: 2rem;
     }
-    
+
     .menu-grid {
         grid-template-columns: 1fr;
     }
@@ -1332,27 +1347,27 @@ nav {
     .container {
         padding: 0 1rem;
     }
-    
+
     nav {
         padding: 1rem;
     }
-    
+
     .hero h1 {
         font-size: 2rem;
     }
-    
+
     .hero p {
         font-size: 1rem;
     }
-    
+
     .hero-buttons {
         flex-direction: column;
     }
-    
+
     .btn {
         width: 100%;
     }
-    
+
     .cart-content {
         max-width: 100%;
     }
