@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freaky Milk Tea | Premium Bubble Tea Experience</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🧋</span>
+                <span class="logo-text">Freaky<span class="highlight">Milk Tea</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a onclick="showPage('home')" class="nav-link active" data-page="home">Home</a></li>
+                <li><a onclick="showPage('about')" class="nav-link" data-page="about">About</a></li>
+                <li><a onclick="showPage('menu')" class="nav-link" data-page="menu">Menu</a></li>
+                <li><a onclick="showPage('contact')" class="nav-link" data-page="contact">Contact</a></li>
+                <li><a onclick="showPage('developers')" class="nav-link" data-page="developers">Developers</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+        <a onclick="showPage('home'); toggleMobileMenu()">Home</a>
+        <a onclick="showPage('about'); toggleMobileMenu()">About</a>
+        <a onclick="showPage('menu'); toggleMobileMenu()">Menu</a>
+        <a onclick="showPage('contact'); toggleMobileMenu()">Contact</a>
+        <a onclick="showPage('developers'); toggleMobileMenu()">Developers</a>
+    </div>
+
+    <main class="container">
+        <div id="home" class="page active">
+            <section class="hero">
+                <div class="hero-content">
+                    <span class="hero-badge">Premium Quality</span>
+                    <h1>Experience the Art of <span class="highlight">Milk Tea</span></h1>
+                    <p>Handcrafted with love using the finest ingredients. Every sip tells a story of passion, quality, and the perfect blend of flavors.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="showPage('menu')">Explore Menu</button>
+                        <button class="btn btn-secondary" onclick="showPage('about')">Our Story</button>
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">15</span>
+                        <span class="stat-label">Unique Flavors</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">2K+</span>
+                        <span class="stat-label">Happy Customers</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">4.9</span>
+                        <span class="stat-label">Rating</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="featured-section">
+                <div class="section-header">
+                    <span class="section-badge">Customer Favorites</span>
+                    <h2>Featured Drinks</h2>
+                    <p>Discover our most loved creations</p>
+                </div>
+                <div class="carousel-container">
+                    <div class="carousel" id="carousel"></div>
+                    <button class="carousel-btn prev" onclick="prevSlide()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15,18 9,12 15,6"></polyline>
+                        </svg>
+                    </button>
+                    <button class="carousel-btn next" onclick="nextSlide()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9,6 15,12 9,18"></polyline>
+                        </svg>
+                    </button>
+                    <div class="carousel-dots" id="dots"></div>
+                </div>
+            </section>
+
+            <section class="why-us-section">
+                <div class="section-header">
+                    <span class="section-badge">Why Choose Us</span>
+                    <h2>The Freaky Difference</h2>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🍃</div>
+                        <h3>Premium Ingredients</h3>
+                        <p>We source only the finest tea leaves and fresh ingredients for authentic flavors.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3>Customizable</h3>
+                        <p>Adjust sweetness, ice level, and toppings to create your perfect drink.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Fast Service</h3>
+                        <p>Your handcrafted drink ready in minutes without compromising quality.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💝</div>
+                        <h3>Made with Love</h3>
+                        <p>Every drink is crafted with care and passion by our skilled baristas.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="testimonials-section">
+                <div class="section-header">
+                    <span class="section-badge">Testimonials</span>
+                    <h2>What Our Customers Say</h2>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p>"The Brown Sugar Milk Tea is absolutely divine! Best bubble tea I've ever had. The pearls are perfectly chewy advantage FFFREEAAAAKKKYYYY"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">H</div>
+                            <div>
+                                <strong>Hannah Isabel Bugawisan</strong>
+                                <span>Regular Customer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p>"I love the variety of flavors! The Taro Milk Tea is my go-to drink. Great atmosphere and friendly staff!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">C</div>
+                            <div>
+                                <strong>Christopher Lazaga</strong>
+                                <span>Loyal Customer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">★★★★⯪</div>
+                        <p>"Perfect blend of sweetness and tea flavor. The Matcha Milk Tea is refreshing and not too sweet. Highly recommend!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">E</div>
+                            <div>
+                                <strong>Eujene Elumbaring</strong>
+                                <span>First-time Visitor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="about" class="page">
+            <section class="about-hero">
+                <div class="section-header">
+                    <span class="section-badge">Our Story</span>
+                    <h2>About Freaky Milk Tea</h2>
+                </div>
+            </section>
+            <div class="about-content">
+                <div class="about-story">
+                    <h3>Our Journey</h3>
+                    <p>Creating our business website did not happen overnight. It began as a desire to earn money and get rich. Then  it became an idea that grew into action. But competition was tough as it is, so we needed a way to market our business and have an advantage against other competitors.</p>
+                    <p>We realized that in today’s world, most customers look online before buying anything, so we decided that "Why not make our own website mainly focusing on our products?" 
+So began our first steps into making our website.</p>
+                    <p>The first challenge we faced was planning. We had to decide what the website should contain, like the homepage, product page, contact information, and maybe even a section for customer feedback. We discussed as a group and listed down all the things we needed. This planning stage helped us understand what kind of website we wanted to create.</p>
+                    <p>Next, we moved on to the actual development. At the beginning, everything felt confusing because we were still beginners in coding or web design. We had to search for simple tutorials and ask help from others who knew more than us. Little by little, we learned how to design the layout, choose colors, and make buttons that actually worked. It was challenging, but also fun because we were learning something new.</p>
+                    <p>Another important step was teamwork. Each of us had tasks: someone worked on the layout, someone gathered pictures and information, and someone checked if the website worked properly. Working together made the job easier and faster. We also helped each other when something was difficult or when someone made a mistake.</p>
+                    <p>Finally, after many tries and revisions, our business website was finished. It wasn’t perfect, but it was something we were proud of. We felt accomplished knowing that we created it ourselves, starting from zero. Through this experience, we learned not only about website development, but also about patience, teamwork, and creativity.
+In the end, developing our business website taught us that even if something starts as a simple idea, it can turn into a meaningful project when we put effort and cooperation into it. It was a challenging process, but it helped us grow and understand the importance of adapting to modern technology.</p>
+                    <p> </p>
+                    <p> </p>
+                </div>
+                <div class="about-values">
+                    <h3>Our Values</h3>
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <div class="value-icon">🌟</div>
+                            <h4>Quality First</h4>
+                            <p>We never compromise on ingredients or preparation methods.</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">🤝</div>
+                            <h4>Customer Focus</h4>
+                            <p>Your satisfaction is our top priority in everything we do.</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">🌱</div>
+                            <h4>Sustainability</h4>
+                            <p>We use eco-friendly packaging and support local suppliers.</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">💡</div>
+                            <h4>Innovation</h4>
+                            <p>Constantly creating new flavors to delight your taste buds.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="menu" class="page">
+            <section class="menu-hero">
+                <div class="section-header">
+                    <span class="section-badge">Our Menu</span>
+                    <h2>Handcrafted Drinks</h2>
+                    <p>Choose from our wide selection of premium milk teas and specialty drinks</p>
+                </div>
+            </section>
+            <div class="menu-filters">
+                <button class="filter-btn active" onclick="filterMenu('all', this)">All Drinks</button>
+                <button class="filter-btn" onclick="filterMenu('classic', this)">Classic</button>
+                <button class="filter-btn" onclick="filterMenu('specialty', this)">Specialty</button>
+                <button class="filter-btn" onclick="filterMenu('fruit', this)">Fruit Tea</button>
+            </div>
+            <div class="menu-grid" id="menuGrid"></div>
+        </div>
+
+        <div id="contact" class="page">
+            <section class="contact-hero">
+                <div class="section-header">
+                    <span class="section-badge">Get In Touch</span>
+                    <h2>Contact Us</h2>
+                    <p>We'd love to hear from you! Visit our store or reach out through any of the channels below.</p>
+                </div>
+            </section>
+            <div class="contact-content">
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <h3>Visit Us</h3>
+                        <p>Sta. Ana Avenue<br>Davao City, Philippines 8000</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📞</div>
+                        <h3>Call Us</h3>
+                        <p>(082) 221-9071</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">✉️</div>
+                        <h3>Email Us</h3>
+                        <p>hello@freakymilktea.ph<br>orders@freakymilktea.ph</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">🕐</div>
+                        <h3>Opening Hours</h3>
+                        <p>Mon - Fri: 10:00 AM - 9:00 PM<br>Sat - Sun: 9:00 AM - 10:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="developers" class="page">
+            <section class="developers-hero">
+                <div class="section-header">
+                    <span class="section-badge">Our Team</span>
+                    <h2>Developers</h2>
+                    <p>Meet the creative minds behind Freaky Milk Tea</p>
+                </div>
+            </section>
+            <div class="developers-content">
+                <div class="developers-grid">
+                    <div class="developer-card main-developer">
+                        <div class="developer-avatar">EJ</div>
+                        <h3>Ej</h3>
+                        <span class="developer-role">Main Developer</span>
+                        <p>Responsible for architecting, building, and maintaining the website’s core functionality and technical infrastructure.</p>
+                    </div>
+                    <div class="developer-card">
+                        <div class="developer-avatar">JM</div>
+                        <h3>Jam</h3>
+                        <span class="developer-role">Ideas & Design</span>
+                        <p>Provides innovative design concepts and contributes to shaping the overall visual direction of the website.</p>
+                    </div>
+                    <div class="developer-card">
+                        <div class="developer-avatar">MK</div>
+                        <h3>Miko Miru</h3>
+                        <span class="developer-role">Ideas & Design</span>
+                        <p>Specializes in conceptual brainstorming and crafting visually compelling design proposals for the website.</p>
+                    </div>
+                    <div class="developer-card">
+                        <div class="developer-avatar">PD</div>
+                        <h3>Padang</h3>
+                        <span class="developer-role">Ideas & Design</span>
+                        <p>Focuses on refining design ideas and enhancing the aesthetic coherence of the website’s visual elements.</p>
+                    </div>
+                    <div class="developer-card">
+                        <div class="developer-avatar">TP</div>
+                        <h3>Tapungan</h3>
+                        <span class="developer-role">Ideas & Design</span>
+                        <p>Contributes creative insights and supports the development of engaging, user-oriented visual design solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <span class="logo-icon">🧋</span>
+                    <span class="logo-text">Freaky<span class="highlight">Milk Tea</span></span>
+                </div>
+                <p>Bringing joy one cup at a time. Experience the perfect blend of tradition and innovation.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a onclick="showPage('home')">Home</a>
+                <a onclick="showPage('about')">About Us</a>
+                <a onclick="showPage('menu')">Menu</a>
+                <a onclick="showPage('contact')">Contact</a>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Info</h4>
+                <p>Sta. Ana Avenue, Davao City</p>
+                <p>(082) 221-9071</p>
+                <p>hello@freakymilktea.ph</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Freaky Milk Tea. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="cart-icon" onclick="toggleCart()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="cart-count" id="cartCount">0</span>
+    </div>
+
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-overlay" onclick="toggleCart()"></div>
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Your Order</h2>
+                <button class="close-btn" onclick="toggleCart()">×</button>
+            </div>
+            <div id="cartItems"></div>
+            <div class="cart-footer">
+                <div class="cart-total" id="cartTotal">Total: ₱0.00</div>
+                <button class="btn btn-primary checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
